@@ -4,10 +4,12 @@
  * Author: Junru (Thomas) Ren
  * Date: Feb 12, 2017
  * Schematic and Tutorial: TODO
- * Remark: This code is written for Common Anode Seven Segment Display. If you 
- *         wish to use a Common Cathode, flip all "HIGH" and "LOW" used in
- *         digitalWrite() for Seven Segment Display pins. Then, on your Arduino
- *         change the wire originally connected to 3.3V to GND
+ * Remark: This code is written for Common Anode Seven Segment Display. That's 
+ *         why a segment is actually turned on when the digitalWrite() of a pin
+ *         is set to LOW.
+ *         If you wish to use a Common Cathode, flip all "HIGH" and "LOW" used 
+ *         in digitalWrite() for Seven Segment Display pins. Then, connect your
+ *         Vcc wire to GND on your Arduino
  */
 
 // Map the pins of Seven Segment
@@ -38,7 +40,7 @@ void setup()
 
   digitalWrite(dp, HIGH); // Turn off the dp (decimal point) on the Seven Segment
 
-  randomSeed(analogRead(0));
+  randomSeed(analogRead(0)); // Create random seed using the noise read from Analog Pin 0
 }
 
 void loop()

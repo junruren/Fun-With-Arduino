@@ -9,7 +9,7 @@
  *         is set to LOW.
  *         If you wish to use a Common Cathode, flip all "HIGH" and "LOW" used 
  *         in digitalWrite() for Seven Segment Display pins. Then, connect your
- *         Vcc wire to GND on your Arduino
+ *         "-" to GND rather than 3.3V on your Arduino
  */
 
 // Map the pins of Seven Segment

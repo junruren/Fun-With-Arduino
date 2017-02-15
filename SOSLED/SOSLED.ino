@@ -55,4 +55,3 @@ void morse_O()
   digitalWrite(PINOUT_LED, LOW); //turn the LED off
   delay(DURATION_PARTS);
 }
-

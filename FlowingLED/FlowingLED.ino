@@ -28,8 +28,8 @@ void loop()
     digitalWrite(thisPin, HIGH);
     delay(DELAY_GAP);
   }
-  // Fade from the highest to the lowest
-  for (int thisPin = PIN_HIGHEST; thisPin >= PIN_LOWEST; thisPin--)
+  // Fade from the lowest to the highest
+  for (int thisPin = PIN_LOWEST; thisPin <= PIN_HIGHEST; thisPin++)
   {
     digitalWrite(thisPin, LOW);
     delay(DELAY_GAP);
@@ -40,8 +40,8 @@ void loop()
     digitalWrite(thisPin, HIGH);
     delay(DELAY_GAP);
   }
-  // Fade from the lowest to the highest
-  for (int thisPin = PIN_LOWEST; thisPin <= PIN_HIGHEST; thisPin++)
+  // Fade from the highest to the lowest
+  for (int thisPin = PIN_HIGHEST; thisPin >= PIN_LOWEST; thisPin--)
   {
     digitalWrite(thisPin, LOW);
     delay(DELAY_GAP);

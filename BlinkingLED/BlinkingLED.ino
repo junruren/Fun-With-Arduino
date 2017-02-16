@@ -3,15 +3,15 @@
  * code for blinking "analogly" provided but commented
  * Author(s): Junru (Thomas) Ren, Zhimin Lin
  * Last Update: Feb 12, 2017
- * WARNING: be sure to have a resister connected in series with the LED to 
- *          protect the circuit
+ * Remark: Be sure to have a resister connected in series with the LED to 
+ *         protect the circuit.
  */
 
 /* Constant Data Field */
 const int PINOUT_LED = 9;       // Initialize the LED pinout to be Pin 9
 const int ANALOG_DELAY = 5;     // Delay between each increment/decrement step of the LED
-const int DELAY_GAP = 500;
-const int MAX_DUTY_CYCLE = 255; // MAxium output value allowed for analogWrite()
+const int DELAY_GAP = 500;      // The delay gap (in ms)
+const int MAX_DUTY_CYCLE = 255; // Maximum output value allowed for analogWrite()
 
 void setup() {
   // Initialize the output pin
@@ -28,8 +28,7 @@ void loop() {
   delay(DELAY_GAP);
 
   /* Analog Blink */
-  //Code for blinking in analog mode
-  
+  /*
   int dutyCycle = 0;
   // Turning on the LED gradually
   while (dutyCycle <= MAX_DUTY_CYCLE){
@@ -45,4 +44,5 @@ void loop() {
     delay(ANALOG_DELAY);
   }
   delay(DELAY_GAP);
+  */
 }

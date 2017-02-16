@@ -3,7 +3,6 @@
  * Display every time the button is pressed, simulating a dice toss.
  * Author: Junru (Thomas) Ren
  * Date: Feb 12, 2017
- * Schematic and Tutorial: TODO
  * Remark: This code is written for Common Anode Seven Segment Display. That's 
  *         why a segment is actually turned on when the digitalWrite() of a pin
  *         is set to LOW.

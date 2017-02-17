@@ -1,11 +1,10 @@
 /*
  * Make 8 LEDs light up and dim successively, using Pin 2-9 of Arduino Uno
- * Author: Junru (Thomas) Ren
+ * Author(s): Junru (Thomas) Ren
  * Date: Feb 15, 2017
  * Remark: Be sure to have a resister connected in series with a LED to 
  *         protect the circuit.
  */
-
 
 const int PIN_LOWEST  = 2; // The lowest one attach to pin 2
 const int PIN_HIGHEST = 9; // The highest one attach to pin 9

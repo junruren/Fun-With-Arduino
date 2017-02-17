@@ -1,17 +1,18 @@
 /**
- * Header file for Morse-Code-LED.ino
+ * A Morse Code translator that translate user's message (input via Serial 
+ * Monitor) into both PIN_LED blink and text (notated by "." and "-") printed to 
+ * Serial Monitor
  * Author(s): Junru (Thomas) Ren, Yi Hui (Michael) Chen
  * Date: Feb 16, 2017
  */
 #include "MorseCode.h"
 
-/* (If you've been using C for awhile) Surprise! Arduino C does support String
- * object like Java!
- */
+// User input String buffer
 String userInput = "";
 
 void setup() {
-  pinMode(LED, OUTPUT);
+  // Initialize the LED Pin as output pin
+  pinMode(PIN_LED, OUTPUT);
   // Start serial port at given data rate in bps
   Serial.begin(SERIAL_PORT_BPS);
   // Prompt the user to input a color via Serial Monitor
@@ -33,7 +34,7 @@ void loop() {
     userInput.toUpperCase();
     Serial.println("\n" + userInput); // Print user's input to the Serial Monitor
   }
-
+  // Translate each character of the String
   for (unsigned int i = 0; i < userInput.length(); i++) {
     char tempChar = userInput.charAt(i);
     switch (tempChar) {
@@ -146,7 +147,9 @@ void loop() {
         enCode(morse0);
         break;
       case ' ':
-        Serial.print("  ");
+        Serial.print("  "); // Print three spaces between every two words
+                            // Only two spaces used here because one would be 
+                            // printed by the last character
         delay(DURATION_WORDS);
         break;
       default:
@@ -158,24 +161,28 @@ void loop() {
   userInput = ""; // Clear the user input buffer to prevent the message being re-translated
 }
 
+/*
+ * A helper function that translate the given Morse Code array into actual LED 
+ * blinks and output the translated text to the Serial Monitor
+ */
 void enCode(const int code []) {
   int i = 0;
   while (code[i] != -1) {
     if (code[i] == 1) {
       Serial.print("-");
-      digitalWrite(LED, HIGH);
+      digitalWrite(PIN_LED, HIGH);
       delay(DURATION_DASH);
-      digitalWrite(LED, LOW);
+      digitalWrite(PIN_LED, LOW);
       delay(DURATION_PARTS);
     } else if (code[i] == 0) {
       Serial.print(".");
-      digitalWrite(LED, HIGH);
+      digitalWrite(PIN_LED, HIGH);
       delay(DURATION_DOT);
-      digitalWrite(LED, LOW);
+      digitalWrite(PIN_LED, LOW);
       delay(DURATION_PARTS);
     }
     i++;
   }
-  Serial.print(" ");
+  Serial.print(" "); // Print a space to the Serial Monitor between each letter
   delay(DURATION_LETTERS);
 }

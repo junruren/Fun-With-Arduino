@@ -7,13 +7,14 @@
 #define MORSECODE_H
 
 /* Constants */
-#define PINOUT_LED 9            // Initialize the LED pinout to be Pin 9
-#define UNIT 300                // Define the duration of one Morse Unit
-#define DURATION_DOT UNIT       // A dot is one UNIT
-#define DURATION_DASH UNIT*3    // A dash is three UNITs
-#define DURATION_PARTS UNIT     // The space between parts of the same letter is one UNIT
-#define DURATION_LETTERS UNIT*3 // The space between letters are three UNITs
-#define DURATION_WORDS UNIT*7   // The space between words is seven UNITs
+const int PIN_LED = 9;               // Initialize the LED pinout to be Pin 9
+const int UNIT = 300;                // Define the duration of one Morse Unit
+const int DURATION_DOT = UNIT;       // A dot is one UNIT
+const int DURATION_DASH = UNIT*3;    // A dash is three UNITs
+const int DURATION_PARTS = UNIT;     // The space between parts of the same letter is one UNIT
+const int DURATION_LETTERS = UNIT*2; // The space between letters are three UNITs
+const int DURATION_WORDS = UNIT*6;   // The space between words is seven UNITs
+// Multipliers are one off because one additional UNIT would be delayed by a DOT or DASH
 
 const int morseA [] =    {0, 1, -1};
 const int morseB [] =    {1, 0, 0, 0, -1};
@@ -56,5 +57,5 @@ const int LED = 9;
 const int SERIAL_PORT_BPS = 9600; // The data rate (in bits per second) for 
                                   // serial data transmission
                                   // Usually choose 9600
-
-#endif /* SOSLED_H */
+void enCode(const int code []);
+#endif /* MORSECODE_H */

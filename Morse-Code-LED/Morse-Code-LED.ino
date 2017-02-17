@@ -1,6 +1,6 @@
 /**
  * A Morse Code translator that translate user's message (input via Serial 
- * Monitor) into both PIN_LED blink and text (notated by "." and "-") printed to 
+ * Monitor) into both LED blink and text (notated by "." and "-") printed to 
  * Serial Monitor
  * Author(s): Junru (Thomas) Ren, Yi Hui (Michael) Chen
  * Date: Feb 16, 2017

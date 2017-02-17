@@ -1,15 +1,15 @@
 /*
- * Display a random number between 1 and 6 on the Common Anode Seven Segment 
- * Display every time the button is pressed, simulating a dice toss.
- * Author: Junru (Thomas) Ren
- * Date: Feb 12, 2017
- * Remark: This code is written for Common Anode Seven Segment Display. That's 
- *         why a segment is actually turned on when the digitalWrite() of a pin
- *         is set to LOW.
- *         If you wish to use a Common Cathode, flip all "HIGH" and "LOW" used 
- *         in digitalWrite() for Seven Segment Display pins. Then, connect your
- *         "-" to GND rather than 3.3V on your Arduino
- */
+   Display a random number between 1 and 6 on the Common Anode Seven Segment
+   Display every time the button is pressed, simulating a dice toss.
+   Author: Junru (Thomas) Ren
+   Date: Feb 12, 2017
+   Remark: This code is written for Common Anode Seven Segment Display. That's
+           why a segment is actually turned on when the digitalWrite() of a pin
+           is set to LOW.
+           If you wish to use a Common Cathode, flip all "HIGH" and "LOW" used
+           in digitalWrite() for Seven Segment Display pins. Then, connect your
+           "-" to GND rather than 3.3V on your Arduino
+*/
 
 // Map the pins of Seven Segment
 const int a = 7;  // a of 7-segment attach to digital pin 7
@@ -45,40 +45,35 @@ void setup()
 void loop()
 {
   buttonState = digitalRead(buttonPin);
-  if (buttonState != lastButtonState) {
-    if (buttonState == HIGH) {
-      // Turn off the Display first
-      displayOff();
-      delay(50);
-      // Generate a random dice number
-      int dice = random(1, 7);
+  if (buttonState == HIGH) {
+    // Generate a random dice number
+    int dice = random(1, 7);
 
-      switch ( dice ) {
-        case 1:
-          digital_1();//diaplay 1 to the 7-segment
-          break;
-        case 2:
-          digital_2();//diaplay 2 to the 7-segment
-          break;
-        case 3:
-          digital_3();//diaplay 3 to the 7-segment
-          break;
-        case 4:
-          digital_4();//diaplay 4 to the 7-segment
-          break;
-        case 5:
-          digital_5();//diaplay 5 to the 7-segment
-          break;
-        case 6:
-          digital_6();//diaplay 6 to the 7-segment
-          break;
-        default:
-          digital_0();//diaplay 0 to the 7-segment
-          break;
-      }
+    switch ( dice ) {
+      case 1:
+        digital_1();//diaplay 1 to the 7-segment
+        break;
+      case 2:
+        digital_2();//diaplay 2 to the 7-segment
+        break;
+      case 3:
+        digital_3();//diaplay 3 to the 7-segment
+        break;
+      case 4:
+        digital_4();//diaplay 4 to the 7-segment
+        break;
+      case 5:
+        digital_5();//diaplay 5 to the 7-segment
+        break;
+      case 6:
+        digital_6();//diaplay 6 to the 7-segment
+        break;
+      default:
+        digital_0();//diaplay 0 to the 7-segment
+        break;
     }
-    delay(50); // Delay a little bit to avoid bouncing
   }
+  delay(50); // Delay a little bit to avoid bouncing
   lastButtonState = buttonState; // Save the button state
 }
 

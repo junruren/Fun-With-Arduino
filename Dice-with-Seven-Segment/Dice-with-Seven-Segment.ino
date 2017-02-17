@@ -47,6 +47,10 @@ void loop()
   buttonState = digitalRead(buttonPin);
   if (buttonState != lastButtonState) {
     if (buttonState == HIGH) {
+      // Turn off the Display first
+      displayOff();
+      delay(50);
+      // Generate a random dice number
       int dice = random(1, 7);
 
       switch ( dice ) {
@@ -72,12 +76,18 @@ void loop()
           digital_0();//diaplay 0 to the 7-segment
           break;
       }
-
-
     }
     delay(50); // Delay a little bit to avoid bouncing
   }
   lastButtonState = buttonState; // Save the button state
+}
+
+void displayOff(void)
+{
+  for (int thisPin = 4; thisPin <= 11; thisPin++)
+  {
+    digitalWrite(thisPin, HIGH);
+  }
 }
 
 void digital_0(void) //diaplay 0 to the 7-segment
@@ -88,7 +98,7 @@ void digital_0(void) //diaplay 0 to the 7-segment
   digitalWrite(d, LOW); //turn the d of the 7-segment on
   digitalWrite(e, LOW); //turn the e of the 7-segment on
   digitalWrite(f, LOW); //turn the f of the 7-segment on
-  digitalWrite(g, HIGH); //turn the g of the 7-segment on
+  digitalWrite(g, LOW); //turn the g of the 7-segment on
 }
 
 void digital_1(void) //diaplay 1 to the 7-segment

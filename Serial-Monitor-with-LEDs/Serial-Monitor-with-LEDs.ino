@@ -63,16 +63,16 @@ void loop()
   else if (userInput == "yellow")
   {
     // If user entered "yellow", turn on only Yellow LED
-    digitalWrite(PIN_LED_RED, LOW);//turn the red led off
-    digitalWrite(PIN_LED_GREEN, LOW);//turn the green led off
-    digitalWrite(PIN_LED_YELLOW, HIGH);//turn the yellow led on
+    digitalWrite(PIN_LED_RED, LOW);
+    digitalWrite(PIN_LED_GREEN, LOW);
+    digitalWrite(PIN_LED_YELLOW, HIGH);
   }
   else if (userInput == "green")
   {
     // If user entered "green", turn on only Green LED
-    digitalWrite(PIN_LED_RED, LOW);//turn the red led off
-    digitalWrite(PIN_LED_GREEN, HIGH);//turn the green led on
-    digitalWrite(PIN_LED_YELLOW, LOW);//turn the yellow led off
+    digitalWrite(PIN_LED_RED, LOW);
+    digitalWrite(PIN_LED_GREEN, HIGH);
+    digitalWrite(PIN_LED_YELLOW, LOW);
   }
   else
   {

@@ -16,7 +16,8 @@ void setup() {
   // Start serial port at given data rate in bps
   Serial.begin(SERIAL_PORT_BPS);
   // Prompt the user to input a color via Serial Monitor
-  Serial.print("Please input your message that you wish to translate into Morse Code:");
+  Serial.print(
+    "Please input your message that you wish to translate into Morse Code:");
 }
 
 void loop() {
@@ -158,7 +159,8 @@ void loop() {
         break;
     } // End Switch
   } // End Loop
-  userInput = ""; // Clear the user input buffer to prevent the message being re-translated
+  // Clear the user input buffer to prevent the message being re-translated
+  userInput = "";
 }
 
 /*

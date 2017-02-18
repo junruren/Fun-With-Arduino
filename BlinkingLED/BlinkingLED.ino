@@ -5,12 +5,13 @@
  * Last Update: Feb 12, 2017
  * Remark: Be sure to have a resister connected in series with the LED to 
  *         protect the circuit.
- *         analogWrite() only available for Pin 3, 5, 6, 8, 10, and 11 on most Arduino boards
+ *         analogWrite() only available for Pin 3, 5, 6, 8, 10, and 11 on most 
+ *         Arduino boards
  */
 
 /* Constant Data Field */
 const int PIN_LED = 9;          // Initialize the LED pinout to be Pin 9
-const int ANALOG_DELAY = 5;     // Delay between each increment/decrement step of the LED
+const int ANALOG_DELAY = 5;     // Delay between each inc/dec step of the LED
 const int DELAY_GAP = 500;      // The delay gap (in ms)
 const int MAX_DUTY_CYCLE = 255; // Maximum output value allowed for analogWrite()
 

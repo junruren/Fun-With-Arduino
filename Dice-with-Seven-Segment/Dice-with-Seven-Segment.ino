@@ -1,15 +1,15 @@
 /*
-   Display a random number between 1 and 6 on the Common Anode Seven Segment
-   Display every time the button is pressed, simulating a dice toss.
-   Author: Junru (Thomas) Ren
-   Date: Feb 12, 2017
-   Remark: This code is written for Common Anode Seven Segment Display. That's
-           why a segment is actually turned on when the digitalWrite() of a pin
-           is set to LOW.
-           If you wish to use a Common Cathode, flip all "HIGH" and "LOW" used
-           in digitalWrite() for Seven Segment Display pins. Then, connect your
-           "-" to GND rather than 3.3V on your Arduino
-*/
+ * Display a random number between 1 and 6 on the Common Anode Seven Segment
+ * Display every time the button is pressed, simulating a dice toss.
+ * Author: Junru (Thomas) Ren
+ * Date: Feb 12, 2017
+ * Remark: This code is written for Common Anode Seven Segment Display. That's
+ *         why a segment is actually turned on when the digitalWrite() of a pin
+ *         is set to LOW.
+ *         If you wish to use a Common Cathode, flip all "HIGH" and "LOW" used
+ *         in digitalWrite() for Seven Segment Display pins. Then, connect your
+ *          "-" to GND rather than 3.3V on your Arduino
+ */
 
 // Map the pins of Seven Segment
 const int a = 7;  // a of 7-segment attach to digital pin 7
@@ -37,9 +37,11 @@ void setup()
   // Set Button pin as INPUT
   pinMode(buttonPin, INPUT);
 
-  digitalWrite(dp, HIGH); // Turn off the dp (decimal point) on the Seven Segment
+  // Turn off the dp (decimal point) on the Seven Segment
+  digitalWrite(dp, HIGH);
 
-  randomSeed(analogRead(0)); // Create random seed using the noise read from Analog Pin 0
+  // Create random seed using the noise read from Analog Pin 0
+  randomSeed(analogRead(0));
 }
 
 void loop()

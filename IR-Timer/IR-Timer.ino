@@ -10,8 +10,16 @@
 
 unsigned long t1=0;
 unsigned long t2=0;
-void sens1() { if ((t1==0) && (t2==0)) t1=myMicros(); }
-void sens2() { if ((t2==0) && (t1!=0)) t2=myMicros(); }
+
+void sens1() { 
+  if ((t1==0) && (t2==0))
+    t1=myMicros();
+}
+
+void sens2() {
+  if ((t2==0) && (t1!=0))
+    t2=myMicros();
+}
 
 void setup() {
   pinMode(PIN_SENSOR_1,INPUT);

@@ -1,4 +1,13 @@
-#define PIN_SENSOR_1 2
+/*
+ * Filename: IR-Timer.ino
+ * Author: Junru Ren
+ * Description: Read digital signals from two IR Sensors and use the time 
+ *              difference between two signals to calculate the speed of
+ *              a moving object.
+ * More information: http://tinyurl.com/IR-Timer-Slides
+ * Date: Apr 30 2017
+ * Credit: www.instructables.com/id/Arduino-IR-Sensor-Timer/
+ */
 #define PIN_SENSOR_2 3
 #define PIN_REFERENCE 13
 #define DISTANCE 10
@@ -58,7 +67,9 @@ static unsigned long myMicros() {
    return ((m << 8) + t) * (64 / clockCyclesPerMicrosecond());
 }
 
-
+/*
+ * Credit: http://forum.arduino.cc/index.php?topic=44216.0
+ */
 void printDouble( double val, byte precision){
  // prints val with number of decimal places determine by precision
  // precision is a number from 0 to 6 indicating the desired decimial places

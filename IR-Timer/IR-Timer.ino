@@ -8,6 +8,7 @@
  * Date: Apr 30 2017
  * Credit: www.instructables.com/id/Arduino-IR-Sensor-Timer/
  */
+#define PIN_SENSOR_1 2
 #define PIN_SENSOR_2 3
 #define PIN_REFERENCE 13
 #define DISTANCE 10
